@@ -8438,7 +8438,7 @@ MonoBehaviour:
   moveSpeed: 4
   jumpSacreSpeed: 50
   jumpScarePoint: {fileID: 1510895539}
-  jumpScareProbability: 10
+  jumpScareProbability: 5
   searchDistance: 20
   chaseDistance: 10
   reachDistance: 4
