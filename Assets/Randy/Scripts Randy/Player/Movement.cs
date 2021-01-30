@@ -5,10 +5,22 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class Movement : MonoBehaviour
 {
+    [Header("Character Controller")]
     [SerializeField] private CharacterController controller;
+
+    [Header("Movement")]
     [SerializeField] private float speed = 6f;
     [SerializeField] private float turnSmoothTime = 0.1f;
     [SerializeField] private float turnSmoothVelocity = 0.1f;
+    private Vector3 moveDir;
+
+    [Header("Dash")]
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashtime;
+
+    [Header("Energy")]
+    [SerializeField] private float energy;
+    [SerializeField] private float maxEnergy;
 
     private void Start()
     {
@@ -27,8 +39,31 @@ public class Movement : MonoBehaviour
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir * speed * Time.deltaTime);
+        }
+
+        DoADash();
+    }
+
+    private void DoADash()
+    {
+        if(energy > 0)
+        {
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                StartCoroutine(Dash());
+        }
+    }
+
+    private IEnumerator Dash()
+    {
+        float startTime = Time.time;
+
+        while (Time.time < startTime + dashtime)
+        {
+            controller.Move(moveDir * dashSpeed * Time.deltaTime);
+
+            yield return null;
         }
     }
 }
