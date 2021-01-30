@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 
     [Header("Character Controller")]
     [SerializeField] private CharacterController controller;
+    [SerializeField] private Animator animator;
 
     [Header("Movement")]
     [SerializeField] private float speed = 6f;
@@ -18,6 +19,8 @@ public class Movement : MonoBehaviour
     [Header("Dash")]
     [SerializeField] private float dashSpeed;
     [SerializeField] private float dashtime;
+    [SerializeField] private float dashtimeDelay = 2;
+    private float dashDelay;
 
     [Header("Energy")]
     [SerializeField] private EnergySystem energySystem;
@@ -25,6 +28,7 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        dashDelay = dashtimeDelay;
     }
 
     // Update is called once per frame
@@ -52,19 +56,35 @@ public class Movement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
-                energySystem.state = EnergyState.Dashing;
-                StartCoroutine(Dash());
+                dashDelay -= Time.deltaTime;
+                if(dashDelay <= 0)
+                {
+                    energySystem.state = EnergyState.Dashing;
+                    StartCoroutine(Dash());
+                }
+                else
+                    animator.SetBool("Dash",true);
             }
+        }
+        else
+        {
+            energySystem.state = EnergyState.Consuming;
+            animator.SetBool("Dash", false);
+            dashDelay = dashtimeDelay;
         }
         
         if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
             energySystem.state = EnergyState.Consuming;
+            animator.SetBool("Dash",false);
+            dashDelay = dashtimeDelay;
+        }
     }
 
     private IEnumerator Dash()
     {
         float startTime = Time.time;
-
+        
         while (Time.time < startTime + dashtime)
         {
             controller.Move(moveDir * dashSpeed * Time.deltaTime);
