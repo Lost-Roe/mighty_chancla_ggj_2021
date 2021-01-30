@@ -59,7 +59,7 @@ public class Movement : MonoBehaviour
                 dashDelay -= Time.deltaTime;
                 if(dashDelay <= 0)
                 {
-                    energySystem.state = EnergyState.Dashing;
+                    energySystem.SetState(EnergyState.Dashing);
                     StartCoroutine(Dash());
                 }
                 else
@@ -68,14 +68,14 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            energySystem.state = EnergyState.Consuming;
+            energySystem.SetState(EnergyState.Consuming);
             animator.SetBool("Dash", false);
             dashDelay = dashtimeDelay;
         }
         
         if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
         {
-            energySystem.state = EnergyState.Consuming;
+            energySystem.SetState(EnergyState.Consuming);
             animator.SetBool("Dash",false);
             dashDelay = dashtimeDelay;
         }

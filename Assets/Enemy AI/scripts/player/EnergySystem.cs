@@ -32,7 +32,7 @@ public class EnergySystem : ScriptableObject
                 consuptionMultiplier = -1;
                 break;
             case EnergyState.Dashing:
-                consuptionMultiplier = -5;
+                consuptionMultiplier = -15;
                 break;
             default:
                 consuptionMultiplier = -1;
