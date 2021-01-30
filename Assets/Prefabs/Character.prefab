@@ -2867,6 +2867,9 @@ MonoBehaviour:
   speed: 6
   turnSmoothTime: 0.1
   turnSmoothVelocity: 0.1
+  dashSpeed: 15
+  dashtime: 0.0001
+  energySystem: {fileID: 11400000, guid: e3578e35d97c7434eb213a87e7adb0a9, type: 2}
 --- !u!114 &7067325812246300880
 MonoBehaviour:
   m_ObjectHideFlags: 0

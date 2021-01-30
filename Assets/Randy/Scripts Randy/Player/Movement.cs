@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class Movement : MonoBehaviour
 {
+
     [Header("Character Controller")]
     [SerializeField] private CharacterController controller;
 
@@ -19,8 +20,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float dashtime;
 
     [Header("Energy")]
-    [SerializeField] private float energy;
-    [SerializeField] private float maxEnergy;
+    [SerializeField] private EnergySystem energySystem;
 
     private void Start()
     {
@@ -48,11 +48,17 @@ public class Movement : MonoBehaviour
 
     private void DoADash()
     {
-        if(energy > 0)
+        if(energySystem.currentEnergy > 0)
         {
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                energySystem.state = EnergyState.Dashing;
                 StartCoroutine(Dash());
+            }
         }
+        
+        if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+            energySystem.state = EnergyState.Consuming;
     }
 
     private IEnumerator Dash()
@@ -62,6 +68,7 @@ public class Movement : MonoBehaviour
         while (Time.time < startTime + dashtime)
         {
             controller.Move(moveDir * dashSpeed * Time.deltaTime);
+
 
             yield return null;
         }
