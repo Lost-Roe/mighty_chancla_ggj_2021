@@ -7,11 +7,17 @@ public class EnergyCharger : MonoBehaviour
     [SerializeField]
     private EnergySystem energySystem;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Charger")
         {
-            energySystem.SetState(EnergyState.Charging);
+            if(energySystem.state == EnergyState.Dashing || energySystem.state == EnergyState.ChargingDashing)
+            {
+                energySystem.SetState(EnergyState.ChargingDashing);
+            } else
+            {
+                energySystem.SetState(EnergyState.Charging);
+            }
         }
     }
 
@@ -19,7 +25,14 @@ public class EnergyCharger : MonoBehaviour
     {
         if (other.gameObject.tag == "Charger")
         {
-            energySystem.SetState(EnergyState.Consuming);
+            if(energySystem.state != EnergyState.ChargingDashing)
+            {
+                energySystem.SetState(EnergyState.Consuming);
+            } else
+            {
+                energySystem.SetState(EnergyState.Dashing);
+            }
+
         }
     }
 }

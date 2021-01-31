@@ -32,7 +32,7 @@ public class EnemyReached : StateMachineBehaviour
             ai.deathTimer = ai.deathTimer - (1 * Time.deltaTime);
             float percentage = ai.deathTimer / ai.deathTime;
             screenColor = new Color(ai.deathScreen.color.r, ai.deathScreen.color.g, ai.deathScreen.color.b, 1 - percentage);
-            
+            ai.Stop();
             ai.deathScreen.color = screenColor;
             if(ai.deathTimer <= 0)
             {

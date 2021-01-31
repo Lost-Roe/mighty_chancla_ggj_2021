@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CameraTarget
   - Charger
+  - Jelly
   layers:
   - Default
   - TransparentFX
