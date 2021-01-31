@@ -24,6 +24,8 @@ public class JellyCatcher : MonoBehaviour
                 jelly.SetTarget(director.GetJellyTarget());
                 director.currentJellies++;
                 jelly.Reached();
+                jelly.gameObject.tag = "Untagged";
+                director.CheckForInterestPoints();
                 reached = true;
             }
         }

@@ -24,6 +24,8 @@ public class EnemyAI : MonoBehaviour
     public GameObject jumpScareParticlesEnd;
     public Collider meshCol;
 
+    public Animator skelleton;
+
     public float searchDistance;
     public float chaseDistance;
     public float reachDistance;
@@ -90,7 +92,7 @@ public class EnemyAI : MonoBehaviour
             agent.isStopped = false;
         agent.speed = moveSpeed;
         agent.angularSpeed = 120;
-        agent.acceleration = 8;
+        agent.acceleration = 12;
         agent.SetDestination(target.position);
     }
 
@@ -102,7 +104,7 @@ public class EnemyAI : MonoBehaviour
             agent.isStopped = false;
         agent.speed = dashSpeed;
         agent.angularSpeed = 120;
-        agent.acceleration = 8;
+        agent.acceleration = 12;
         agent.SetDestination(target.position);
     }
 
@@ -160,5 +162,22 @@ public class EnemyAI : MonoBehaviour
             return Vector3.Distance(jumpScarePoint.transform.position, transform.position);
         else
             return 0;
+    }
+}
+
+public static class ExtensionMethod
+{
+    public static void CrossFadeAlphaFixed(this UnityEngine.UI.Graphic img, float alpha, float duration, bool ignoreTimeScale)
+    {
+        //Make the alpha 1
+        Color fixedColor = img.color;
+        fixedColor.a = 1;
+        img.color = fixedColor;
+
+        //Set the 0 to zero then duration to 0
+        img.CrossFadeAlpha(0f, 0f, true);
+
+        //Finally perform CrossFadeAlpha
+        img.CrossFadeAlpha(alpha, duration, ignoreTimeScale);
     }
 }
