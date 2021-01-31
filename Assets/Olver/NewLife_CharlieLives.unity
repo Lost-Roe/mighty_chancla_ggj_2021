@@ -15,10 +15,10 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.5471698, g: 0.24519402, b: 0.4687345, a: 1}
+  m_FogColor: {r: 0.4056604, g: 0.24301353, b: 0.3629989, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.05
-  m_LinearFogStart: 0
+  m_LinearFogStart: 10
   m_LinearFogEnd: 30
   m_AmbientSkyColor: {r: 0.7539606, g: 0.14578143, b: 0.7924528, a: 1}
   m_AmbientEquatorColor: {r: 0.018689938, g: 0.49297488, b: 0.5660378, a: 1}
@@ -2396,6 +2396,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b99bdf2e826849b99e8566a9acd8d24, type: 3}
+--- !u!1001 &5202050435102661128
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5202050435415884041, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_Name
+      value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202050435415884042, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202050435415884042, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202050435415884042, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202050435415884042, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202050435415884042, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202050435415884042, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202050435415884042, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202050435415884042, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202050435415884042, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202050435415884042, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202050435415884042, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5eb5cd84fe2f727438f4b3c80f102005, type: 3}
 --- !u!1001 &5390688786209340870
 PrefabInstance:
   m_ObjectHideFlags: 0
