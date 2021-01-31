@@ -26,19 +26,19 @@ public class EnergySystem : ScriptableObject
         switch (s)
         {
             case EnergyState.Charging:
-                consuptionMultiplier = 2;
+                consuptionMultiplier = 5;
                 break;
             case EnergyState.Consuming:
-                consuptionMultiplier = -0.5f;
+                consuptionMultiplier = -0.2f;
                 break;
             case EnergyState.Dashing:
-                consuptionMultiplier = -10;
+                consuptionMultiplier = -5;
                 break;
             case EnergyState.ChargingDashing:
-                consuptionMultiplier = 1;
+                consuptionMultiplier = 2;
                 break;
             default:
-                consuptionMultiplier = -0.5f;
+                consuptionMultiplier = -0.2f;
                 break;
         }
         state = s;
