@@ -13,9 +13,10 @@ public class EnemyJumpScare : StateMachineBehaviour
     {
         ai = animator.gameObject.GetComponent<EnemyAI>();
         anim = animator;
-        ai.JumpScare();
-        timer = 0.5f;
-        animator.gameObject.GetComponent<SphereCollider>().enabled = false;
+        ai.Stop();
+        ai.meshCol.enabled = false;
+        ai.JumpScareStart();
+        timer = 0.1f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -27,12 +28,11 @@ public class EnemyJumpScare : StateMachineBehaviour
         {
             anim.SetBool("jumpScare", false);
         }
-
-        ai.JumpScare();
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.gameObject.GetComponent<SphereCollider>().enabled = true;
+        ai.JumpScareEnd();
+        ai.meshCol.enabled = true;
     }
 }

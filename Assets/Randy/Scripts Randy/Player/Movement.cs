@@ -52,30 +52,40 @@ public class Movement : MonoBehaviour
 
     private void DoADash()
     {
-        if(energySystem.currentEnergy > 0)
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            if (energySystem.currentEnergy > 0)
             {
                 dashDelay -= Time.deltaTime;
                 if(dashDelay <= 0)
                 {
-                    energySystem.SetState(EnergyState.Dashing);
+                    if(energySystem.state == EnergyState.Charging || energySystem.state == EnergyState.ChargingDashing)
+                    {
+                        energySystem.SetState(EnergyState.ChargingDashing);
+                    } else
+                    {
+                        energySystem.SetState(EnergyState.Dashing);
+                    }
                     StartCoroutine(Dash());
                 }
                 else
                     animator.SetBool("Dash",true);
+            } else
+            {
+                if(energySystem.state == EnergyState.ChargingDashing)
+                    energySystem.SetState(EnergyState.Charging);
+                else
+                    energySystem.SetState(EnergyState.Consuming);
+                animator.SetBool("Dash", false);
+                dashDelay = dashtimeDelay;
             }
         }
-        else
-        {
-            energySystem.SetState(EnergyState.Consuming);
-            animator.SetBool("Dash", false);
-            dashDelay = dashtimeDelay;
-        }
-        
         if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
         {
-            energySystem.SetState(EnergyState.Consuming);
+            if (energySystem.state == EnergyState.ChargingDashing)
+                energySystem.SetState(EnergyState.Charging);
+            else
+                energySystem.SetState(EnergyState.Consuming);
             animator.SetBool("Dash",false);
             dashDelay = dashtimeDelay;
         }
@@ -88,8 +98,6 @@ public class Movement : MonoBehaviour
         while (Time.time < startTime + dashtime)
         {
             controller.Move(moveDir * dashSpeed * Time.deltaTime);
-
-
             yield return null;
         }
     }

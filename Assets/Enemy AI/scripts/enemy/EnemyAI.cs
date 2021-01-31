@@ -10,16 +10,19 @@ public class EnemyAI : MonoBehaviour
     public Transform target;
     private NavMeshAgent agent;
     private EnemySense[] senses;
+    private float initialY;
 
     public float jumpScareTimer;
     public float jumpScareRate;
 
     public float dashSpeed;
     public float moveSpeed;
-    public float jumpSacreSpeed;
 
     public Transform jumpScarePoint;
     public int jumpScareProbability;
+    public GameObject jumpScareParticlesStart;
+    public GameObject jumpScareParticlesEnd;
+    public Collider meshCol;
 
     public float searchDistance;
     public float chaseDistance;
@@ -36,6 +39,7 @@ public class EnemyAI : MonoBehaviour
         senses = gameObject.GetComponentsInChildren<EnemySense>();
         target = GameObject.Find("Character").transform;
         jumpScareTimer = jumpScareRate;
+        initialY = transform.position.y;
         Stop();
         agent.stoppingDistance = reachDistance;
 
@@ -64,6 +68,18 @@ public class EnemyAI : MonoBehaviour
                 onTargetFound(hit);
             }
         }
+    }
+
+    public void WanderTowards(Vector3 point)
+    {
+        if (agent.stoppingDistance < reachDistance)
+            agent.stoppingDistance = reachDistance;
+        if (agent.isStopped)
+            agent.isStopped = false;
+        agent.speed = moveSpeed;
+        agent.angularSpeed = 120;
+        agent.acceleration = 8;
+        agent.SetDestination(point);
     }
 
     public void MoveTowards()
@@ -116,17 +132,18 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
-    public void JumpScare()
+    public void JumpScareStart()
     {
-        if(jumpScareTimer < jumpScareRate)
-            jumpScareTimer = jumpScareRate;
-        if (agent.isStopped)
-            agent.isStopped = false;
-        agent.speed = jumpSacreSpeed;
-        agent.stoppingDistance = 0f;
-        agent.angularSpeed = 1;
-        agent.acceleration = 500;
-        agent.SetDestination(jumpScarePoint.position);
+        Instantiate(jumpScareParticlesStart, transform.position, Quaternion.identity);
+        transform.position = new Vector3 (transform.position.x, 90, transform.position.z);
+    }
+
+    public void JumpScareEnd()
+    {
+
+        transform.position = new Vector3(jumpScarePoint.position.x, initialY,jumpScarePoint.position.z);
+        transform.LookAt(target);
+        Instantiate(jumpScareParticlesEnd, transform.position, Quaternion.identity);
     }
 
     public float DistanceFromTarget()
