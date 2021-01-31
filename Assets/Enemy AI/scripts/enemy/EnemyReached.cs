@@ -36,7 +36,7 @@ public class EnemyReached : StateMachineBehaviour
             ai.deathScreen.color = screenColor;
             if(ai.deathTimer <= 0)
             {
-                anim.SetBool("gameOver", true);
+                FindObjectOfType<GameDirector>().stateManager.gameState = GameState.GameOver;
                 Debug.Log("Game Over");
             }
         }
