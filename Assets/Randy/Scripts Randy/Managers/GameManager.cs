@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/" + scenes[0]);
         _uiManager.Activate(UiName.MainMenu);
-        //_transitionsManager.TransitionMusic(0);
+        _transitionsManager.TransitionMusic(0);
     }
 
     public void LoadMainMenu()
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(int idx)
     {
         _transitionsManager.TransitionScene(idx);
-        _transitionsManager.TransitionMusic(0);
+        _transitionsManager.TransitionMusic(1);
     }
     #endregion
 
