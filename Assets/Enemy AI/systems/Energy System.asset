@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b450e602257ff4ed49963470067028b0, type: 3}
   m_Name: Energy System
   m_EditorClassIdentifier: 
-  consuptionMultiplier: 2
+  consuptionMultiplier: -1
   state: 0
-  currentEnergy: 35
+  currentEnergy: 0
