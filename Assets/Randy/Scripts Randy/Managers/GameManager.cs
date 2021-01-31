@@ -42,6 +42,11 @@ public class GameManager : MonoBehaviour
         _transitionsManager.TransitionSceneMainMenu();
         _transitionsManager.TransitionMusic(0);
     }
+
+    public void BackMainMenu()
+    {
+        _uiManager.Activate(UiName.MainMenu);
+    }
     #endregion
 
     #region Level
