@@ -7,6 +7,7 @@ public class EnemyJumpScare : StateMachineBehaviour
     private EnemyAI ai;
     private Animator anim;
     private float timer;
+    private AudioSource audio;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -16,6 +17,9 @@ public class EnemyJumpScare : StateMachineBehaviour
         ai.Stop();
         ai.meshCol.enabled = false;
         ai.JumpScareStart();
+
+        audio = ai.gameObject.GetComponent<AudioSource>();
+        audio.PlayOneShot(audio.clip);
         timer = 0.1f;
     }
 

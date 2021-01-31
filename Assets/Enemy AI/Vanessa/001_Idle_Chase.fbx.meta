@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: c6e4e736142d94c2691b008f350cc112
+guid: 02f3cc4abaae64091979be15f894b7d5
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 7845601778523722575
-    second: Vannessa_Appear
+      74: -4737626856660493379
+    second: Idle_Chase
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -24,7 +24,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 1
+    importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Vannessa_Appear
-      takeName: Vannessa_Appear
+      name: Idle_Chase
+      takeName: Idle_Chase
       internalID: 0
       firstFrame: 1
-      lastFrame: 30
+      lastFrame: 10
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -95,7 +95,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
