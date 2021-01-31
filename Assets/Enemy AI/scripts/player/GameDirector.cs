@@ -98,6 +98,7 @@ public class GameDirector : MonoBehaviour
                 CheckDistances();
                 break;
             case GameState.GameOver:
+                FindObjectOfType<UiManager>().Activate(UiName.GameOver);
                 if (Time.timeScale != 1)
                     Time.timeScale = 1;
                 break;

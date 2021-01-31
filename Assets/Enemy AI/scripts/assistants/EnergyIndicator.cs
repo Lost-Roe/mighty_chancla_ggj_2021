@@ -8,8 +8,6 @@ public class EnergyIndicator : MonoBehaviour
 {
     [SerializeField]
     private EnergySystem energySystem;
-
-    public TMP_Text label;
     public GameObject chargingIcon;
     public GameObject percentageIcon;
     public Image percentageAmount;
@@ -19,7 +17,6 @@ public class EnergyIndicator : MonoBehaviour
     void Update()
     {
         percentageAmount.fillAmount = energySystem.currentEnergy / 100;
-        label.text = energySystem.currentEnergy.ToString() + "%";
         switch (energySystem.state)
         {
             case EnergyState.Charging:
