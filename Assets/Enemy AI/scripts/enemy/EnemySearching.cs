@@ -19,8 +19,11 @@ public class EnemySearching : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       float curDistance = ai.DistanceFromTarget();
-        Debug.Log(curDistance);
+        if (ai.deathScreen.color.a > 0)
+        {
+            ai.deathScreen.color = new Color(ai.deathScreen.color.r, ai.deathScreen.color.g, ai.deathScreen.color.b, ai.deathScreen.color.a - 0.2f * Time.deltaTime);
+        }
+        float curDistance = ai.DistanceFromTarget();
         if (curDistance > ai.searchDistance)
         {
             ai.Stop();
