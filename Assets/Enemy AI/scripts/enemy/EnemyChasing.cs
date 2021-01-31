@@ -13,6 +13,7 @@ public class EnemyChasing : StateMachineBehaviour
         ai = animator.gameObject.GetComponent<EnemyAI>();
         ai.deathTimer = ai.deathTime;
         anim = animator;
+        ai.skelleton.SetBool("isChasing", true);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -24,6 +24,8 @@ public class EnemyAI : MonoBehaviour
     public GameObject jumpScareParticlesEnd;
     public Collider meshCol;
 
+    public Animator skelleton;
+
     public float searchDistance;
     public float chaseDistance;
     public float reachDistance;

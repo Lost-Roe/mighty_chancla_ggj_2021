@@ -13,6 +13,7 @@ public class EnemySearching : StateMachineBehaviour
         ai = animator.gameObject.GetComponent<EnemyAI>();
         anim = animator;
         anim.SetBool("chasing", false);
+        ai.skelleton.SetBool("isChasing", false);
         ai.Stop();
     }
 
