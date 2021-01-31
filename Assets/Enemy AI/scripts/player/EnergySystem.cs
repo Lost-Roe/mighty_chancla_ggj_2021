@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnergyState { Consuming, Charging, Dashing}
+public enum EnergyState { Consuming, Charging, Dashing, ChargingDashing}
 
 [CreateAssetMenu(fileName = "New Energy System", menuName = "GGJ2021/Systems/Energy System")]
 public class EnergySystem : ScriptableObject
 {
     const float maxEn = 100;
-
+    public PauseSystem stateManager;
     public float consuptionMultiplier;
     public EnergyState state;
     public float currentEnergy;
@@ -29,13 +29,16 @@ public class EnergySystem : ScriptableObject
                 consuptionMultiplier = 2;
                 break;
             case EnergyState.Consuming:
-                consuptionMultiplier = -1;
+                consuptionMultiplier = -0.5f;
                 break;
             case EnergyState.Dashing:
-                consuptionMultiplier = -15;
+                consuptionMultiplier = -10;
+                break;
+            case EnergyState.ChargingDashing:
+                consuptionMultiplier = 1;
                 break;
             default:
-                consuptionMultiplier = -1;
+                consuptionMultiplier = -0.5f;
                 break;
         }
         state = s;

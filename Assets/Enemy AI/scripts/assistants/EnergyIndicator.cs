@@ -34,6 +34,10 @@ public class EnergyIndicator : MonoBehaviour
                 chargingIcon.SetActive(false);
                 percentageIcon.SetActive(true);
                 break;
+            case EnergyState.ChargingDashing:
+                chargingIcon.SetActive(true);
+                percentageIcon.SetActive(false);
+                break;
         }
     }
 }
