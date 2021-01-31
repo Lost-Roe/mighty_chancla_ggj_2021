@@ -152,6 +152,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568dcbeca208e48fbaf03f5b3c482c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &7989432835231628069
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5250846151226601297}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 302d3abed46cf4888b02caa4d5538c4d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7989432835231628070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5250846151226601297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000f2d1e96a5c489d97f0fdc41481af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitudeX: 0.2
+  frequencyX: 0.25
+  amplitudeY: 0.2
+  frequencyY: 0.25
 --- !u!1 &7989432833426053656
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,41 +249,6 @@ MonoBehaviour:
   speed: 6
   dashSpeed: 16
   energySystem: {fileID: 11400000, guid: e3578e35d97c7434eb213a87e7adb0a9, type: 2}
---- !u!95 &7989432835231628069
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5250846151226601297}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 302d3abed46cf4888b02caa4d5538c4d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7989432835231628070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5250846151226601297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 000f2d1e96a5c489d97f0fdc41481af2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudeX: 0.2
-  frequencyX: 0.25
-  amplitudeY: 0.2
-  frequencyY: 0.25
 --- !u!1 &7989432833980120328
 GameObject:
   m_ObjectHideFlags: 0

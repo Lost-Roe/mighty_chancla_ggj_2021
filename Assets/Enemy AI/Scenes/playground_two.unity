@@ -257,7 +257,7 @@ PrefabInstance:
     - target: {fileID: 8373376214563858091, guid: 2e693e0530f8f4634bb6729054e308a6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d81da709975764cac8ac7123f3994cf8, type: 2}
+      objectReference: {fileID: 2100000, guid: 4967d9d4bb4888349bf50ada3639496d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e693e0530f8f4634bb6729054e308a6, type: 3}
 --- !u!82 &336334086 stripped
@@ -1082,42 +1082,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 336334086, guid: ab85d073a44ca09449bb58db44be825d, type: 3}
-      propertyPath: m_Pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 336334086, guid: ab85d073a44ca09449bb58db44be825d, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 336334086, guid: ab85d073a44ca09449bb58db44be825d, type: 3}
-      propertyPath: MinDistance
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 336334086, guid: ab85d073a44ca09449bb58db44be825d, type: 3}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 336334086, guid: ab85d073a44ca09449bb58db44be825d, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107778195, guid: ab85d073a44ca09449bb58db44be825d, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107778195, guid: ab85d073a44ca09449bb58db44be825d, type: 3}
-      propertyPath: MinDistance
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107778195, guid: ab85d073a44ca09449bb58db44be825d, type: 3}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107778195, guid: ab85d073a44ca09449bb58db44be825d, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.31
-      objectReference: {fileID: 0}
     - target: {fileID: 1718683323608883654, guid: ab85d073a44ca09449bb58db44be825d, type: 3}
       propertyPath: m_RootOrder
       value: 9
