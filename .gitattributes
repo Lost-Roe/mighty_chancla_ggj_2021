@@ -1,0 +1,6 @@
+*.fbx filter=lfs diff=lfs merge=lfs -text
+<<<<<<< HEAD
+*.wav filter=lfs diff=lfs merge=lfs -text
+=======
+*.png filter=lfs diff=lfs merge=lfs -text
+>>>>>>> 04a8730a915bff893372a95597458c74a707e750
